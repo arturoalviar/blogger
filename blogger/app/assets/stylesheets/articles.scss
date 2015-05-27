@@ -2,14 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colors';
+@import 'mixins';
+@import 'form';
+@import 'btn';
 
-$pink-300: #F06292;
 
+$circle-btn-w: 56px;
+$circle-btn-h: $circle-btn-w;
 
 a{
   text-decoration: none;
-  color: $pink-300;
-  border-bottom: 2px solid $pink-300;
+  color: $second-color;
 }
 
 
@@ -17,15 +21,77 @@ ul{
   list-style: none;
 
   li{
-
-  margin: .5em 0;
+  font-size: 1.4em;
+  margin: 1em 0;
 
   }
 
 }
 
+.header{
+  color: $white;
+  background: $header;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+
+  .title a{
+    color: $white;
+  }
+}
+
+.container-wide{
+  max-width: 100%;
+  padding: 2em 1em;
+}
+
+.container{
+  max-width: 1090px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+
+.article-container{
+  max-width: 760px;
+}
+
+.new-article-container{
+  max-width: 600px;
+  margin: 1em auto;
+}
+
+.article{
+  font-size: 1.2em;
+  line-height: 1.4em;
+  margin: 2em 0;
+}
 
 .article-header{
   font-size: 2em;
-  padding: 1em;
+  padding: 1em 0;
+}
+
+
+.controls-container{
+  padding: 1em 0;
+}
+
+
+.new-article-link{
+  position: absolute;
+  bottom: 1.5em;
+  right: 2em;
+  width: $circle-btn-w;
+  height: $circle-btn-h;
+  background: $second-color;
+  border-radius: 100%;
+  color: $white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: $circle-btn-w;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+  & a{
+    color: $white;
+    display:block;
+  }
 }

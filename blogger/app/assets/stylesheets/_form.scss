@@ -1,0 +1,41 @@
+@import 'colors';
+@import 'mixins';
+
+.text-field-input, .text-body-input,
+.comment-author-input, .comment-body-input{
+  padding: 10px;
+  font-size: 1.1em;
+  color: $black;
+  font-weight: 300;
+  background: none;
+  border: $main-color 1px solid;
+  @include animate();
+  &:focus{
+    border: darken($main-color, 15%) 1px solid;
+    outline: 0;
+  }
+}
+
+.comment-author-input, .comment-body-input{
+  width: 320px;
+  max-width: 320px;
+}
+
+
+.text-field-input, .text-body-input{
+  width: 100%;
+}
+
+.comment-body-input{
+  height: 100px;
+}
+
+.text-body-input{
+  height: 250px;
+}
+
+
+.label{
+  padding: .5em 0;
+  display: block;
+}

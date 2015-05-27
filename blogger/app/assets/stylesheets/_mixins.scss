@@ -1,0 +1,7 @@
+@mixin animate($sec : .3s){
+    -webkit-transition: all $sec ease-in-out;
+    -moz-transition: all $sec ease-in-out;
+    -o-transition: all $sec ease-in-out;
+    -ms-transition: all $sec ease-in-out;
+    transition: all $sec ease-in-out;
+}
