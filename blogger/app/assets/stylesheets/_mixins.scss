@@ -5,3 +5,17 @@
     -ms-transition: all $sec ease-in-out;
     transition: all $sec ease-in-out;
 }
+
+
+@mixin rotate($deg){
+    -webkit-transform:rotate($deg);
+    -moz-transform:rotate($deg);
+    -o-transition: rotate($deg);
+    transition: rotate($deg);
+}
+
+
+@mixin grayscale($percent){
+  -webkit-filter: grayscale($percent);
+  filter: grayscale($percent);
+}

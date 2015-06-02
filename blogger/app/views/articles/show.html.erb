@@ -1,20 +1,32 @@
 <%= render partial: 'header' %>
+
 <div class="container">
-<div class="article-container">
-<h1 class="article-header"><%= @article.title %></h1>
-<%= link_to "< Back to Article Lists ", articles_path %>
-<br/>
-<article class="article"><%= @article.body%></article>
+  <div class="image-container"></div>
+  <div class="wrapper">
+    <h1 class="article-header"><%= @article.title %></h1>
+    <p>
+      Tags:<% @article.tags.each do |tag| %>
+        <%= link_to tag.name, tag_path(tag) %>
+      <% end %>
+    </p>
 
-<div class="controls-container">
-<%= link_to "$ Edit Post", edit_article_path(@article) %>
-|
-<%= link_to "X Delete Post", article_path(@article) , method: :delete, data: {confirm: "Really delete the article?"} %>
+    <article class="article"><%= @article.body%></article>
 
-</div>
-<%= render partial: 'comments/form' %>
+    <div class="controls-container">
+      <%= link_to "$ Edit Post", edit_article_path(@article) %>
+        |
+        <%= link_to "X Delete Post", article_path(@article) , method: :delete, data: {confirm: "Really delete the article?"} %>
+    </div>
+    <%= link_to "< Back to Article Lists ", articles_path %>
+    <br/>
+  </div>
 
-<h3>Comments (<%= @article.comments.size %>)</h3>
-<%= render partial: 'articles/comment', collection: @article.comments %>
-</div>
+  <div class="wrapper comment-form-container">
+    <%= render partial: 'comments/form' %>
+  </div>
+
+    <div class="wrapper comments">
+      <h3>Comments (<%= @article.comments.size %>)</h3>
+      <%= render partial: 'articles/comment', collection: @article.comments %>
+    </div>
 </div>

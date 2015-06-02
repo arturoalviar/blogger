@@ -1,14 +1,17 @@
 <%= render partial: 'header' %>
 <div class="container">
-<h1 class="article-header" >All Articles</h1>
+  <div class="wrapper blog-list-container">
 
-<ul id="articles">
-  <% @articles.each do |article| %>
-  <li>
-     <%= link_to article.title, article_path(article), class: 'article-title'  %>
-  </li>
-  <% end %>
-</ul>
+    <h1 class="article-header" >All Articles</h1>
+
+    <ul id="articles">
+      <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article_path(article), class: 'article-title'  %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 
 <div class="new-article-link"><%= link_to "+", new_article_path %></div>
 </div>
