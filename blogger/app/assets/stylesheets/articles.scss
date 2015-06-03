@@ -40,6 +40,12 @@ ul{
 
 }
 
+img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .header{
   color: $white;
   background: $header;
@@ -69,7 +75,7 @@ ul{
   box-shadow: rgba(0, 0, 0, 0.0470588) 0px 2px 3px 0px;
 }
 
-.edit-container, .blog-list-container{
+.edit-container, .blog-list-container, .new-article-container{
   margin-top: 15px;
 }
 
@@ -79,7 +85,9 @@ ul{
   max-width: 760px;
   margin-top: 15px;
   min-height: 300px;
-  background: url(https://download.unsplash.com/uploads/1413259835094dcdeb9d3/6e609595) 50% 50% no-repeat;
+  background: $main-color url(https://download.unsplash.com/photo-1427955569621-3e494de2b1d2);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   background-size: cover;
   @include grayscale(50%);
 }
